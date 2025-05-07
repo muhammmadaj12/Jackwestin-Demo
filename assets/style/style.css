@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+html, body {
+    overflow: hidden;
+    width: 100%;
+}
+
+body{
+    background:#F6F9FC !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 92vh;
+    overflow: hidden;
+    font-family: "Noto Sans", sans-serif !important;
+}
+h1, h2, h3, h4{
+    font-family: "Figtree", sans-serif;
+}
+.text-justify{
+    text-align: justify;
+}
+.hero-section{
+    overflow: hidden;
+    width: 100%;
+}
+.hero-section p{
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: #0A2540;
+}
+.hero-section h4{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 114.99999999999999%;
+    color: #0A2540;
+}
+.hero-section h1{
+    font-weight: 650;
+    font-size: 48px;
+    line-height: 120%;
+    color: #0A2540;
+}
+
+.btns{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 30px;
+}
+.btns a{
+    display: block;
+}
+.hero-section .enroll-btn{
+    background-color: #8E55FF;
+    border-radius: 100px;
+    padding: 8px 18px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.hero-section .trials{
+    color: #8E55FF;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.hero-section .enroll-btn:hover{
+    background-color: transparent;
+    color: #8E55FF;
+    border: 1px solid #8E55FF;
+}
+.slider-wrapper {
+    display: flex;
+    gap: 20px;
+    max-width: 100%;
+    height: 500px;
+    position: relative;
+}
+  
+.slider-column {
+    flex: 1;
+    position: relative;
+    height: 100%;
+}
+  
+.image-wrap {
+    display: flex;
+    flex-direction: column;
+    animation: scrollUp 8s linear infinite;
+}
+  
+.image-wrap.reverse {
+    animation: scrollUpReverse 9s linear infinite;
+}
+  
+.image-wrap img {
+    display: block;
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+
+.hero-strip {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 160px;
+    background: radial-gradient(50% 50% at 50% 50%, #33DDFF 20%, rgba(51, 221, 255, 0) 80%),
+                linear-gradient(135deg, #bd4aff, #643eff, #504aff, #a78fff, #CBA5FF, #F6F9FC);
+    background-blend-mode: screen;
+    background-size: 400% 400%;
+    animation: gradientSlide 12s linear infinite;
+    transform: rotate(-6deg) scaleX(1.1);
+    z-index: 0;
+    pointer-events: none;
+    /* overflow-x: hidden; */
+}
+
+/* Add left and right glow with pseudo-elements */
+.hero-strip::before,
+.hero-strip::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    background: inherit;
+    background-blend-mode: screen;
+    background-size: 400% 400%;
+    animation: gradientSlide 12s linear infinite;
+    filter: blur(30px);
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 9;
+}
+
+.hero-strip::before {
+    left: -60px;
+}
+
+.hero-strip::after {
+    right: -60px;
+}
+
+/* Animation */
+@keyframes scrollUp {
+    0% { transform: translateY(0%); }
+    100% { transform: translateY(-50%); }
+}
+  
+@keyframes scrollUpReverse {
+    0% { transform: translateY(-50%); }
+    100% { transform: translateY(0%); }
+}
+
+@keyframes gradientSlide {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+}
+
+/* Meida Quries */
+@media (max-width: 1800px){
+    .hero-strip{
+        width: 95vw;;
+    }
+    .hero-strip::before, .hero-strip::after{
+        width: 70%;
+    }
+    .hero-strip::after {
+        right: 0;
+    }
+}
+@media (max-width: 767px){
+    .slider-wrapper{
+        overflow: hidden;
+        margin-top: 40px;
+    }
+    body{
+        height: auto;
+    }
+}
+@media (max-width: 575px){
+    .hero-strip{
+        width: 95vw;
+        bottom: 6px;
+        height: 90px;
+    }
+}
